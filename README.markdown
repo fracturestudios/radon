@@ -33,7 +33,7 @@ opt.Timeout = 100;  // In milliseconds
 opt.MaxRetransmits = 3;
 
 RnSocket *sock = new RnSocket(opt);
-if (!sock->connect(ipaddr, port)) {
+if (!sock->bind(ipaddr, port)) {
     abort();
 }
 
