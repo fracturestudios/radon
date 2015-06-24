@@ -28,13 +28,18 @@ and retransmitting packets that appear to have been lost.
 ## Example
 
 ```cpp
-RnSocketOpt opt = { 0 };
-opt.Timeout = 100;  // In milliseconds
-opt.MaxRetransmits = 3;
+#include <rn/endpoint.h>
+#include <rn/socket.h>
 
-RnSocket *sock = new RnSocket(opt);
-if (!sock->bind(ipaddr, port)) {
-    abort();
+// ...
+
+void my_init_socket(QUdpSocket *udp)
+{
+    RnSocketOpt opt = { 0 };
+    opt.Timeout = 100;  // In milliseconds
+    opt.MaxRetransmits = 3;
+
+    m_sock = new RnSocket(RnEndpoint::fromQt(udp), opt);
 }
 
 // ...
