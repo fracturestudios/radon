@@ -3,12 +3,14 @@
 //
 // For details, see README.markdown
 //
-#if define(Q_OS_WIN)
+#if defined(Q_OS_WIN)
 #   pragma pack(1)
-#else
+#endif
+struct
+#if !defined(Q_OS_WIN)
 __attribute__((packed))
 #endif
-struct RnHeader
+RnHeader
 {
     uint16_t magic;     // Magic number (should always be ASCII "Rn")
     uint16_t stream;    // Stream index

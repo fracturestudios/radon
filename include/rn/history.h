@@ -1,5 +1,5 @@
 
-class RnHeader;
+struct RnHeader;
 
 // Tracks receiver-side packet acknowledgement history
 //
@@ -15,18 +15,21 @@ class RnHeader;
 class RnHistory
 {
 public:
-    uint32_t start();
-    uint32_t end();
+    RnHistory();
+    ~RnHistory();
+
+    uint32_t start() const;
+    uint32_t end() const;
 
     void advanceTo(uint32_t seq);
 
-    bool wasReceived(uint32_t seq);
+    bool wasReceived(uint32_t seq) const;
     void markReceived(uint32_t seq);
 
-    void fillHeader(RnHeader *header);
+    void fillHeader(RnHeader *header) const;
 
 private:
-    uint32_t m_windowStart;
+    uint32_t m_start;
     uint32_t m_values;
 };
 
