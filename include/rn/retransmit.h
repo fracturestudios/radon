@@ -17,13 +17,13 @@ class RnRetransmit
 {
 public:
     // Adds a packet to the retransmission queue
-    void add(RnHeader *packet, size_t size, int numTries, int timeout);
+    void add(RnHeader *packet, size_t size, int timeout, int numTries);
 
     // Updates the time remaining for each item in the queue
     void update(int elapsed);
 
     // Returns packets for which the timeout has expired
-    QList<RnHeader*> timedOut();
+    QList<RnHeader*> timedOut() const;
 
     // Resets the timeout for the given packet
     void reset(uint32_t seq);
