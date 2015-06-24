@@ -1,4 +1,6 @@
 
+class RnHeader;
+
 // Tracks receiver-side packet acknowledgement history
 //
 // This object is a utility used by RnSocket.
@@ -12,6 +14,19 @@
 //
 class RnHistory
 {
-    // TODO
+public:
+    uint32_t start();
+    uint32_t end();
+
+    void advanceTo(uint32_t seq);
+
+    bool wasReceived(uint32_t seq);
+    void markReceived(uint32_t seq);
+
+    void fillHeader(RnHeader *header);
+
+private:
+    uint32_t m_windowStart;
+    uint32_t m_values;
 };
 

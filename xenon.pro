@@ -18,6 +18,7 @@ SOURCES += src/endpoint.cpp         \
            src/socket.cpp           \
 
 HEADERS += include/rn/endpoint.h    \
+           include/rn/header.h      \
            include/rn/history.h     \
            include/rn/retransmit.h  \
            include/rn/socket.h      \
