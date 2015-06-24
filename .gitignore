@@ -1,0 +1,16 @@
+*.swo
+*.swp
+*.user
+.qmake.stash
+Makefile
+Makefile.*
+moc_*.cpp
+*.o
+*.obj
+*.app
+*.exe
+*.a
+*.dylib
+*.lib
+.DS_Store
+
