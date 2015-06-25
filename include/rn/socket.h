@@ -53,7 +53,7 @@ public:
     // If a packet is returned, the data buffer should be freed using
     // delete[].
     //
-    bool recv(uint8_t **data,  size_t *nb, int *stream = 0);
+    bool recv(uint8_t **data, size_t *size, int *stream = 0);
 
 private:
     RnEndpoint *m_endpoint;

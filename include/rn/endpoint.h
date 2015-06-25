@@ -16,12 +16,13 @@ public:
     // and uses it to send to and receive from the given address.
     //
     static RnEndpoint *fromQt(QUdpSocket *udpSocket,
-                              QHostAddress *address);
+                              const QHostAddress &address,
+                              uint16_t port);
 
     // Sends a datagram containing the given payload data to the
     // remote endpoint
     //
-    void send(const uint8_t *data, size_t size);
+    virtual void send(const uint8_t *data, size_t size) = 0;
 
     // Tries to receive a datagram, and returns a bool indicating whether
     // a datagram was returned.
@@ -29,6 +30,6 @@ public:
     // If a datagram is returned, the data buffer should be freed using
     // delete[].
     //
-    bool recv(uint8_t **data,  size_t *nb);
+    virtual bool recv(uint8_t **data, size_t *size) = 0;
 };
 
