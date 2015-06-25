@@ -1,4 +1,8 @@
 
+#include <cstdint>
+
+#pragma once
+
 struct RnHeader;
 
 // Tracks receiver-side packet acknowledgement history
@@ -23,7 +27,7 @@ public:
 
     void advanceTo(uint32_t seq);
 
-    bool wasReceived(uint32_t seq) const;
+    bool hasReceived(uint32_t seq) const;
     void markReceived(uint32_t seq);
 
     void fillHeader(RnHeader *header) const;

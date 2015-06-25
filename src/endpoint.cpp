@@ -1,8 +1,5 @@
 
 #include <rn/endpoint.h>
-#include <rn/history.h>
-#include <rn/retransmit.h>
-#include <rn/socket.h>
 
 class RnQUdpEndpoint : public RnEndpoint
 {
@@ -10,10 +7,11 @@ public:
     RnQUdpEndpoint(QUdpSocket *sock,
                    const QHostAddress &addr,
                    uint16_t port);
-    ~RnQUdpEndpoint();
+    virtual ~RnQUdpEndpoint();
 
     virtual void send(const uint8_t *data, size_t size) override;
     virtual bool recv(uint8_t **data, size_t *size) override;
+    virtual void release() override;
 
 private:
     QUdpSocket  *m_sock;
@@ -55,6 +53,11 @@ bool RnQUdpEndpoint::recv(uint8_t **outdata,  size_t *outsize)
     *outsize = size;
 
     return true;
+}
+
+void RnQUdpEndpoint::release()
+{
+    delete this;
 }
 
 RnEndpoint *RnEndpoint::fromQt(QUdpSocket *sock,

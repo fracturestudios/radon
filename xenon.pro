@@ -16,12 +16,14 @@ INCLUDEPATH += include
 
 SOURCES += src/endpoint.cpp         \
            src/history.cpp          \
+           src/inbound.cpp          \
            src/retransmit.cpp       \
            src/socket.cpp           \
 
 HEADERS += include/rn/endpoint.h    \
            include/rn/header.h      \
            include/rn/history.h     \
+           include/rn/inbound.h     \
            include/rn/retransmit.h  \
            include/rn/socket.h      \
 

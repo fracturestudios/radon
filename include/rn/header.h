@@ -1,4 +1,8 @@
 
+#include <cstdint>
+
+#pragma once
+
 // Binary representation of a Radon protocol packet header
 //
 // For details, see README.markdown

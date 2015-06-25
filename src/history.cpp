@@ -1,9 +1,6 @@
 
-#include <rn/endpoint.h>
 #include <rn/header.h>
 #include <rn/history.h>
-#include <rn/retransmit.h>
-#include <rn/socket.h>
 
 RnHistory::RnHistory()
     : m_start(0)
@@ -34,7 +31,7 @@ void RnHistory::advanceTo(uint32_t seq)
     }
 }
 
-bool RnHistory::wasReceived(uint32_t seq) const
+bool RnHistory::hasReceived(uint32_t seq) const
 {
     if (seq < start() || seq > end()) {
         return false;

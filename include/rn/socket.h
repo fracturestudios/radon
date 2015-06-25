@@ -2,9 +2,12 @@
 #include <QList>
 #include <QString>
 
+#include <cstdint>
+
 class RnEndpoint;
-class RnRetransmit;
 class RnHistory;
+class RnInbound;
+class RnRetransmit;
 
 // When passed as a max retransmission count, indicates the packet
 // should be resent until it is acknowledged
@@ -53,12 +56,15 @@ public:
     // If a packet is returned, the data buffer should be freed using
     // delete[].
     //
-    bool recv(uint8_t **data, size_t *size, int *stream = 0);
+    bool recv(uint8_t **data, size_t *size, int stream = 0);
 
 private:
     RnEndpoint *m_endpoint;
     RnRetransmit *m_retransmit;
-    RnHistory *m_ack;
+    RnHistory *m_history;
+    RnInbound *m_inbound;
     uint32_t m_seq;
+    int m_timeout;
+    int m_maxRetries;
 };
 

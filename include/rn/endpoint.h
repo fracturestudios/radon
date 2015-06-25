@@ -2,6 +2,10 @@
 #include <QHostAddress>
 #include <QUdpSocket>
 
+#include <cstdint>
+
+#pragma once
+
 // Wraps an underlying UDP socket to be used in an RnSocket.
 //
 // Typical usage is to obtain your own QUdpSocket through your own
@@ -31,5 +35,8 @@ public:
     // delete[].
     //
     virtual bool recv(uint8_t **data, size_t *size) = 0;
+
+    // Frees this endpoint and all its underlying resources
+    virtual void release() = 0;
 };
 
