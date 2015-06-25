@@ -13,4 +13,5 @@ moc_*.cpp
 *.dylib
 *.lib
 .DS_Store
+radontest
 
