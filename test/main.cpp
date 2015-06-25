@@ -41,10 +41,8 @@ int main(int, const char *[])
         }
     }
 
-    printf("\n");
-    printf("Finished\n");
-    printf("%zu tests ran\n", numTests);
-    printf("%u%% passed\n", (unsigned)(100.f * numSucceeded / numTests));
+    printf("\nFinished. %zu tests ran, %u%% passed\n\n",
+           numTests, (unsigned)(100.f * numSucceeded / numTests));
 
     return 0;
 }
