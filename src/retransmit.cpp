@@ -53,6 +53,7 @@ void RnRetransmit::reset(const Item &item)
     if (m_items.contains(seq)) {
         Item &item = m_items[seq];
         item.remainingTime = item.timeout;
+        item.remainingTries -= 1;
     }
 }
 

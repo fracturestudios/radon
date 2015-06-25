@@ -3,6 +3,7 @@
 
 #include "historytests.h"
 #include "inboundtests.h"
+#include "retransmittests.h"
 
 #define DefineTestFunc(func){ #func, func }
 
@@ -14,8 +15,12 @@ static struct
 g_tests[] =
 {
     DefineTestFunc(RnInboundOrdering),
+
     DefineTestFunc(RnHistoryTracking),
     DefineTestFunc(RnHistoryAdvance),
+
+    DefineTestFunc(RnRetransmitExpiry),
+    DefineTestFunc(RnRetransmitReset),
 };
 
 int main(int, const char *[])

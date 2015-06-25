@@ -16,11 +16,13 @@ QMAKE_CFLAGS_RELEASE += -O3
 INCLUDEPATH += ../include
 LIBS += -L../src -lradon
 
-SOURCES += main.cpp         \
-           historytests.cpp \
-           inboundtests.cpp \
+SOURCES += main.cpp             \
+           historytests.cpp     \
+           inboundtests.cpp     \
+           retransmittests.cpp  \
 
-HEADERS += test.h           \
-           historytests.h   \
-           inboundtests.h   \
+HEADERS += test.h               \
+           historytests.h       \
+           inboundtests.h       \
+           retransmittests.h    \
 
