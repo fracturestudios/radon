@@ -26,13 +26,13 @@ int main(int, const char *[])
     for (size_t i = 0; i < numTests; ++i) {
         auto test = g_tests[i];
 
-        printf("[%zu/%zu] %s: BEGIN\n", i + 1, numTests, test.name);
+        printf("[%zu/%zu] %s... ", i + 1, numTests, test.name);
         if (test.func()) {
-            printf("[%zu/%zu] %s: PASS\n", i + 1, numTests, test.name);
+            printf("PASS\n");
             ++numSucceeded;
         }
         else {
-            printf("[%zu/%zu] %s: FAIL\n", i + 1, numTests, test.name);
+            printf("FAIL\n");
         }
     }
 
