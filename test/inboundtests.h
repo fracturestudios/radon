@@ -1,4 +1,3 @@
 
-bool RnInboundIntegrity();
 bool RnInboundOrdering();
 

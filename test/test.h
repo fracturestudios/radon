@@ -22,10 +22,7 @@ typedef bool (*RnTestFunc)();
 
 #define RnAssert(expr)                                              \
     do {                                                            \
-        if ((expr)) {                                               \
-            RnInfo("Assert: %s [OK]", #expr);                       \
-        }                                                           \
-        else {                                                      \
+        if (!(expr)) {                                              \
             RnFail("Assert: %s [FAIL]", #expr);                     \
             return false;                                           \
         }                                                           \

@@ -12,7 +12,6 @@ static struct
 }
 g_tests[] =
 {
-    DefineTestFunc(RnInboundIntegrity),
     DefineTestFunc(RnInboundOrdering),
 };
 
