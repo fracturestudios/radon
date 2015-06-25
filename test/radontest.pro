@@ -17,8 +17,10 @@ INCLUDEPATH += ../include
 LIBS += -L../src -lradon
 
 SOURCES += main.cpp         \
+           historytests.cpp \
            inboundtests.cpp \
 
 HEADERS += test.h           \
+           historytests.h   \
            inboundtests.h   \
 

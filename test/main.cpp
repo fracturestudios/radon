@@ -1,6 +1,7 @@
 
 #include "test.h"
 
+#include "historytests.h"
 #include "inboundtests.h"
 
 #define DefineTestFunc(func){ #func, func }
@@ -13,6 +14,8 @@ static struct
 g_tests[] =
 {
     DefineTestFunc(RnInboundOrdering),
+    DefineTestFunc(RnHistoryTracking),
+    DefineTestFunc(RnHistoryAdvance),
 };
 
 int main(int, const char *[])

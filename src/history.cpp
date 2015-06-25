@@ -48,7 +48,7 @@ void RnHistory::markReceived(uint32_t seq)
     }
 
     uint32_t bit = seq - start();
-    m_values &= (1 << bit);
+    m_values |= (1 << bit);
 }
 
 void RnHistory::fillHeader(RnHeader *header) const
